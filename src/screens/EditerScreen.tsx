@@ -19,13 +19,34 @@ export default function EditerScreen() {
       </View>
 
       <TouchableOpacity
-  style={styles.mainButton}
-  onPress={() => alert('Création de projet bientôt disponible !')}
->
-  <Text style={styles.mainButtonText}>
-    + Nouveau projet
-  </Text>
-</TouchableOpacity>
+        style={styles.mainButton}
+        onPress={() => alert('Création de projet bientôt disponible !')}
+      >
+        <Text style={styles.mainButtonText}>
+          + Nouveau projet
+        </Text>
+      </TouchableOpacity>
+
+      <View style={styles.statsContainer}>
+        <View style={styles.statCard}>
+          <Text style={styles.statNumber}>0</Text>
+          <Text style={styles.statLabel}>Projets</Text>
+        </View>
+
+        <View style={styles.statCard}>
+          <Text style={styles.statNumber}>0</Text>
+          <Text style={styles.statLabel}>Exports</Text>
+        </View>
+
+        <View style={styles.statCard}>
+          <Text style={styles.statNumber}>0</Text>
+          <Text style={styles.statLabel}>Favoris</Text>
+        </View>
+      </View>
+
+      <Text style={styles.sectionTitle}>
+        Outils rapides
+      </Text>
 
       <View style={styles.quickActions}>
         <TouchableOpacity style={styles.card}>
@@ -48,9 +69,21 @@ export default function EditerScreen() {
       </Text>
 
       <View style={styles.project}>
-        <Text style={styles.projectName}>
-          Aucune vidéo disponible
+        <Text style={styles.projectIcon}>🎬</Text>
+
+        <Text style={styles.projectTitle}>
+          Aucun projet
         </Text>
+
+        <Text style={styles.projectDescription}>
+          Créez votre premier projet vidéo.
+        </Text>
+
+        <TouchableOpacity style={styles.createButton}>
+          <Text style={styles.createButtonText}>
+            Créer maintenant
+          </Text>
+        </TouchableOpacity>
       </View>
 
       <Text style={styles.sectionTitle}>
@@ -59,19 +92,39 @@ export default function EditerScreen() {
 
       <View style={styles.tags}>
         <View style={styles.tag}>
-          <Text style={styles.tagText}>Gaming</Text>
+          <Text style={styles.tagText}>
+            Gaming
+          </Text>
         </View>
 
         <View style={styles.tag}>
-          <Text style={styles.tagText}>TikTok</Text>
+          <Text style={styles.tagText}>
+            TikTok
+          </Text>
         </View>
 
         <View style={styles.tag}>
-          <Text style={styles.tagText}>Business</Text>
+          <Text style={styles.tagText}>
+            Business
+          </Text>
         </View>
 
         <View style={styles.tag}>
-          <Text style={styles.tagText}>YouTube</Text>
+          <Text style={styles.tagText}>
+            YouTube
+          </Text>
+        </View>
+
+        <View style={styles.tag}>
+          <Text style={styles.tagText}>
+            Shorts
+          </Text>
+        </View>
+
+        <View style={styles.tag}>
+          <Text style={styles.tagText}>
+            Vlog
+          </Text>
         </View>
       </View>
     </ScrollView>
@@ -87,7 +140,7 @@ const styles = StyleSheet.create({
 
   header: {
     marginTop: 30,
-    marginBottom: 30,
+    marginBottom: 25,
   },
 
   greeting: {
@@ -121,10 +174,42 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 
+  statsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+
+  statCard: {
+    backgroundColor: '#171C29',
+    width: '31%',
+    padding: 15,
+    borderRadius: 15,
+    alignItems: 'center',
+  },
+
+  statNumber: {
+    color: '#15D4E8',
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+
+  statLabel: {
+    color: '#BBBBBB',
+    marginTop: 5,
+  },
+
+  sectionTitle: {
+    color: '#FFFFFF',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 30,
+    marginBottom: 15,
+  },
+
   quickActions: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 25,
   },
 
   card: {
@@ -146,28 +231,47 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
 
-  sectionTitle: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginTop: 30,
-    marginBottom: 15,
-  },
-
   project: {
     backgroundColor: '#171C29',
-    padding: 20,
     borderRadius: 18,
+    padding: 20,
+    alignItems: 'center',
   },
 
-  projectName: {
-    color: '#BBBBBB',
-    fontSize: 16,
+  projectIcon: {
+    fontSize: 40,
+  },
+
+  projectTitle: {
+    color: '#FFFFFF',
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 10,
+  },
+
+  projectDescription: {
+    color: '#AAAAAA',
+    marginTop: 8,
+    textAlign: 'center',
+  },
+
+  createButton: {
+    marginTop: 20,
+    backgroundColor: '#15D4E8',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 15,
+  },
+
+  createButtonText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
   },
 
   tags: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    marginBottom: 30,
   },
 
   tag: {
